@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 void main()=>runApp(ProductApp());
 class ProductApp extends StatelessWidget {
-  TextEditingController getProCode=TextEditingController();
-  TextEditingController getProName=TextEditingController();
+  TextEditingController getProdCode=TextEditingController();
+  TextEditingController getProdName=TextEditingController();
   TextEditingController getManuName=TextEditingController();
   TextEditingController getManuDate=TextEditingController();
   TextEditingController getExpDate=TextEditingController();
   TextEditingController getProdDes=TextEditingController();
-  TextEditingController getProPrice=TextEditingController();
+  TextEditingController getProdPrice=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,11 +21,11 @@ class ProductApp extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             TextField(controller: getProCode,
+             TextField(controller: getProdCode,
                decoration: InputDecoration(
                hintText: "Product Code",border: OutlineInputBorder()
              ),),SizedBox(height: 10.0,width: 10.0,),
-              TextField(controller: getProName,
+              TextField(controller: getProdName,
                 decoration: InputDecoration(
                 hintText: "Product Name",border: OutlineInputBorder()
               ),),SizedBox(height: 10.0,),
@@ -45,12 +45,26 @@ class ProductApp extends StatelessWidget {
                 decoration: InputDecoration(
                 hintText: "Product Description",border: OutlineInputBorder()
               ),),SizedBox(height: 10.0,),
-              TextField(controller: getProPrice,
+              TextField(controller: getProdPrice,
                 decoration: InputDecoration(
                 hintText: "MRP/Price",border: OutlineInputBorder()
               ),),SizedBox(height: 10.0,width: 10.0,),
               RaisedButton(onPressed: (){
-            print("Hello");
+                String  prodcode=getProdCode.text;
+                String prodname=getProdName.text;
+                String manuname=getManuName.text;
+                String manudate=getManuDate.text;
+                String expdate=getExpDate.text;
+                String proddes=getProdDes.text;
+                String prodprice=getProdPrice.text;
+
+            print(prodcode);
+            print(prodname);
+            print(manuname);
+            print(manudate);
+            print(expdate);
+            print(proddes);
+            print(prodprice);
               },child: Text("SUBMIT"),color: Colors.cyanAccent,)
             ],
           ),
